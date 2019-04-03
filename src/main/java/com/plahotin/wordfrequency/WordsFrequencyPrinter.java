@@ -29,7 +29,11 @@ public class WordsFrequencyPrinter {
     }
 
     public static String[] prepareText(String text) {
-        return text.replaceAll("[!@#$%^&*?()\"'.,\\[\\]{}]|\\d", "").replaceAll(" - ", " ").replaceAll("\\n", " ").split(" ");
+        return text.replaceAll("[!@#$%^&*?()\"'.,\\[\\]{}]|\\d", "")
+                .replaceAll(" - ", " ")
+                .replaceAll("\\n", " ")
+                .toLowerCase()
+                .split(" ");
     }
 
     public static Map<String, Long> countFrequency(String[] preparedText) {
