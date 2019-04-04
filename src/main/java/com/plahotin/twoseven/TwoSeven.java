@@ -1,24 +1,22 @@
-package com.plahotin.twoseven;
+package main.java.com.plahotin.twoseven;
 
 public class TwoSeven {
 
     public static void main(String[] args) {
-
-        StringBuilder sb = new StringBuilder();
+        String s = "";
         for (int i = 1; i <= 100; i++) {
             if (i % 2 == 0) {
-                sb.append("Two");
+                s += "Two";
             }
             if (i % 7 == 0) {
-                sb.append("Seven");
+                s += "Seven";
             }
-            if (sb.length() == 0) {
+            if (s.isEmpty()) {
                 System.out.println(i);
             } else {
-                System.out.println(sb.toString());
-                sb.setLength(0);
+                System.out.println(s);
+                s = "";
             }
         }
-
     }
 }

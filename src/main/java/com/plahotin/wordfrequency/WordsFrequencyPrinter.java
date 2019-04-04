@@ -1,4 +1,4 @@
-package com.plahotin.wordfrequency;
+package main.java.com.plahotin.wordfrequency;
 
 import java.util.*;
 import java.util.stream.Collectors;
@@ -6,16 +6,22 @@ import java.util.stream.Stream;
 
 public class WordsFrequencyPrinter {
 
-    private TextProvider textProvider;
+    private static TextProvider textProvider;
 
     public WordsFrequencyPrinter(TextProvider textProvider) {
         this.textProvider = textProvider;
     }
 
     public static void main(String[] args) {
+
+//        String text = textProvider.getText();
         String text = "всем привет. как поживаете? \n как дела? привет привет, привет. Так-то. 12 3. Это - это то.";
 
-        printWordsFrequency(text);
+        if (!text.isEmpty()) {
+            printWordsFrequency(text);
+        } else {
+            System.out.println("Переданные данные не содержат слов.");
+        }
     }
 
     public static void printWordsFrequency(String text) {
@@ -29,7 +35,7 @@ public class WordsFrequencyPrinter {
     }
 
     public static String[] prepareText(String text) {
-        return text.replaceAll("[!@#$%^&*?()\"'.,\\[\\]{}]|\\d", "")
+        return text.replaceAll("[!@#$%^&*?()\"'.,\\[\\]{}\\d]", "")
                 .replaceAll(" - ", " ")
                 .replaceAll("\\n", " ")
                 .toLowerCase()
@@ -53,6 +59,5 @@ public class WordsFrequencyPrinter {
                 .sorted(Map.Entry.comparingByValue())
                 .map(entry -> String.format("%s : %s", entry.getKey(), entry.getValue()))
                 .forEach(s -> System.out.println(s));
-
     }
 }
