@@ -1,4 +1,4 @@
-package main.java.com.plahotin.twoseven;
+package com.plahotin.twoseven;
 
 public class TwoSeven {
 

@@ -1,4 +1,4 @@
-package main.java.com.plahotin.wordfrequency;
+package com.plahotin.wordfrequency;
 
 import java.util.*;
 import java.util.stream.Collectors;

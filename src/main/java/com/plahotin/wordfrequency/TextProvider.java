@@ -1,4 +1,4 @@
-package main.java.com.plahotin.wordfrequency;
+package com.plahotin.wordfrequency;
 
 public interface TextProvider {
 

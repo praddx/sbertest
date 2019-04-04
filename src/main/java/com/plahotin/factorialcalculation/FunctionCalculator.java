@@ -1,10 +1,10 @@
-package main.java.com.plahotin.factorialcalculation;
+package com.plahotin.factorialcalculation;
 
 import java.math.BigInteger;
 
 public class FunctionCalculator {
 
-    public BigInteger calculateFunction(int divisible, int divisor) {
+    public BigInteger calculateFunction(int divisible, int divisor) throws Exception {
         if (!isValidInput(divisible, divisor)) {
             throw new IllegalArgumentException("r must be smaller or equal to m");
         }
